@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body{
+      background-color: #000000;
+      background-image: url(background_image_one.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          sm: '480px',
+          md: '768px',
+          lg: '976px',
+          xl: '1440px'
+        },
+        extend: {
+          colors: {
+            darkWhite: '#ECECEC',
+            normalWhite: '#FFFFFF',
+            normaGray: '#8095B2',
+            normalPurple: '#C091EB',
+            lightPurple: '#DBC0F3',
+            normalBlue: '#82B3F4',
+            darkBlue: '#003479'
+          }
+        },
+      },
+    }
+  </script>
+  <title>Gordon</title>
+</head>
+<body>
+
+    <!--Nav bar-->
+    <nav class="relative container mx-auto p-6 text-white">
+        <div class="flex items-center justify-between">
+            <!--logo-->
+            <div class="pt-2">
+                <img src="logo.png" class="w-16" alt="">
+            </div>
+
+            <!-- Menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-white hover:text-normaGray">Home</a>
+                <a href="#" class="text-white hover:text-normaGray">Contact</a>
+            </div>
+
+            <!-- Hamburger icon -->
+            <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+            </button>
+        </div>
+        <div class="md:hidden">
+            <div id="menu" class="absolute flex flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                <a href="#">Home</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About me section -->
+    <section class="text-white">
+        <div class="container flex flex-col items-center px-6 mx-auto mt-24">
+            <h1 class="text-3xl font-semibold text-center">Munyaradzi Gordon Muneka</h1>
+            <p class="mt-6 text-center">A passionate designer and a great developer </p>
+            <a href="#" class="mt-6 p-2 px-8 text-darkBlue bg-white rounded-md hover:bg-darkWhite">
+                Let's talk
+            </a>
+        </div>
+    
+        <div class="hidden container md:flex flex-col items-end px-36 mx-auto mt-2">
+            <img src="drawing1.png" class="w-24" alt="">
+        </div>
+    
+        <div class="hidden container md:flex flex-col items-start px-36 mx-auto mt-2">
+            <img src="drawing2.png" class="w-24" alt="">
+        </div>
+        
+    </section>
+
+
+
+    <!-- What I do -->
+    <section id="whatIDo" class="text-white">
+        <div class="max-w-6xl px-6 mx-auto mt-32 text-center">
+            <h2 class="text-3xl font-semibold">What I do</h2>
+        </div>
+        <!-- What I do container 1 -->
+        <div class="flex flex-col mt-12 mx-6 md:flex-row md:space-x-6">
+            <!-- Item 1-->
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/3">
+                <img src="designer.svg" class="w-24" alt="">
+                <h3 class="text-lg font-semibold">UI/UX</h3>
+                <p class="text-sm text-center">Fliers designer, Userflow, wire framing, prototyping, mobile 
+                    app designer, web designer and desktop application design</p>
+            </div>
+            <!-- Item 2 -->
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/3">
+                <img src="web.svg" class="w-24" alt="">
+                <h3 class="text-lg font-semibold">Web development</h3>
+                <p class="text-sm text-center">Fliers designer, Userflow, wire framing, prototyping, mobile 
+                    app designer, web designer and desktop application design</p>
+            </div>
+            <!-- Item 3-->
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/3">
+                <img src="mobile.svg" class="w-24" alt="">
+                <h3 class="text-lg font-semibold">Mobile development</h3>
+                <p class="text-sm text-center">Fliers designer, Userflow, wire framing, prototyping, mobile 
+                    app designer, web designer and desktop application design</p>
+            </div>
+        </div>
+
+        <!-- What I do container 2 -->
+        <!--
+        <div class="flex flex-col mt-8 mx-6 md:flex-row md:space-x-6">
+            <!-- Item 1--
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/3">
+                <img src="drawing2.png" class="w-24" alt="">
+                <h3 class="text-lg font-semibold">UI/UX</h3>
+                <p class="text-sm text-center">Fliers designer, Userflow, wire framing, prototyping, mobile 
+                    app designer, web designer and desktop application design</p>
+            </div>
+            <!-- Item 2 --
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/3">
+                <img src="drawing2.png" class="w-24" alt="">
+                <h3 class="text-lg font-semibold">UI/UX</h3>
+                <p class="text-sm text-center">Fliers designer, Userflow, wire framing, prototyping, mobile 
+                    app designer, web designer and desktop application design</p>
+            </div>
+            <!-- Item 3--
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/3">
+                <img src="drawing2.png" class="w-24" alt="">
+                <h3 class="text-lg font-semibold">UI/UX</h3>
+                <p class="text-sm text-center">Fliers designer, Userflow, wire framing, prototyping, mobile 
+                    app designer, web designer and desktop application design</p>
+            </div>
+        </div>
+        -->
+    </section>
+
+    <!-- My latest work -->
+    <section id="whatIDo">
+        <div class="max-w-6xl px-6 mx-auto mt-32 text-center">
+            <h2 class="text-3xl font-semibold text-white">My latest work</h2>
+        </div>
+        <!-- Mt latest work container 1 -->
+        <div class="flex flex-col-reverse mt-12 mx-6 md:flex-row md:space-x-0">
+            <!-- Left -->
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/2 bg-darkWhite rounded-br-xl rounded-bl-xl md:rounded-br-none md:rounded-l-xl">
+                <h3 class="text-lg font-semibold text-center">Nakisa AI Digital Doctor</h3>
+                <h3 class="text-sm text-normaGray">Web and Mobile Application</h3>
+                <a href="#" class="mt-36 p-2 px-8 text-white bg-normalPurple rounded-md hover:bg-lightPurple">
+                    View Project
+                </a>
+            </div>
+            <!-- Right -->
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/2 bg-normalPurple rounded-tr-lg rounded-tl-lg md:rounded-tl-none md:rounded-r-xl ">
+                <img src="project_one.png" class="h-64 my-auto" alt="">
+            </div>
+        </div>
+        <!-- Mt latest work container 2 -->
+        <div class="flex flex-col-reverse mt-12 mx-6 md:flex-row md:space-x-0">
+            <!-- Left -->
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/2 bg-normalBlue rounded-br-xl rounded-bl-xl md:rounded-br-none md:rounded-l-xl">
+                <img src="project_two.png" class="h-64 my-auto" alt="">
+            </div>
+            <!-- Right -->
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/2 bg-darkWhite rounded-tr-lg rounded-tl-lg md:rounded-tl-none md:rounded-r-xl ">
+                <h3 class="text-lg font-semibold text-center">Gender and age Detection System</h3>
+                <h3 class="text-sm text-normaGray">Mobile Application</h3>
+                <a href="#" class="mt-36 p-2 px-8 text-white bg-normalPurple rounded-md hover:bg-lightPurple">
+                    View Project
+                </a>
+            </div>
+        </div>
+        <!-- Mt latest work container 3 -->
+        <div class="flex flex-col-reverse my-12 mx-6 md:flex-row md:space-x-0">
+            <!-- Left -->
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/2 bg-darkWhite rounded-br-xl rounded-bl-xl md:rounded-br-none md:rounded-l-xl">
+                <h3 class="text-lg font-semibold text-center">Hona</h3>
+                <h3 class="text-sm text-normaGray">Mobile Application</h3>
+                <a href="#" class="mt-36 p-2 px-8 text-white bg-normalPurple rounded-md hover:bg-lightPurple">
+                    View Project
+                </a>
+            </div>
+            <!-- Right -->
+            <div class="flex flex-col items-center p-6 space-y-6 md:w-1/2 bg-normalPurple rounded-tr-lg rounded-tl-lg md:rounded-tl-none md:rounded-r-xl ">
+                <img src="project_two.png" class="h-64 my-auto" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact me -->
+    <section>
+        <div class="container flex flex-col items-center px-6 mx-auto my-36 text-white">
+            <h1 class="text-3xl font-semibold text-center">Interested in working with me?</h1>
+            <p class="mt-6">Phone: +263 785 313 872</p>
+            <p class="mt-6">WhatsApp: +263 785 313 872</p>
+            <a href="#" class="mt-6 p-2 px-8 text-darkBlue bg-white rounded-md hover:bg-darkWhite">
+                Let's talk
+            </a>
+        </div>
+    </section>
+    
+</body>
+</html>
