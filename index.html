@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link href="allCss.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,6 +58,66 @@
       h3{
         font-family: 'serif';
       }
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #82B3F4;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+      }
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      .form {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 1;
+        transition: 0.5s;
+      }
+      .from a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+      }
+      .form a:hover {
+        color: #f1f1f1;
+      }
+      .form .closebtn {
+        font-size: 36px;
+      }
+      .project {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 1;
+        transition: 0.5s;
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
     </style>
     <script>
       tailwind.config = {
@@ -101,11 +162,18 @@
         </div>
 
         <!-- Hamburger icon -->
-        <div>
+        <div onclick="openNav()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </div>  
+
+        <!-- Hamburger menu options -->
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn text-gray-100" onclick="closeNav()">&times;</a>
+          <a href="index.html" class="text-gray-100 font-medium text-lg">Home</a>
+          <a class="text-gray-100 font-medium text-lg" onclick="openForm()">Contact</a>
+        </div>
       </nav>
 
 
@@ -118,10 +186,53 @@
         <div class="container flex flex-col items-center mt-6">
           <h3 class="text-5xl font-semibold text-center text-gray-700">Muneka Munyaradzi Gordon</h3>
           <p class="mt-6 text-center text-gray-700">A qualified and skilled developer with critical thinking abilities as well as an enthusiastic designer </p>
-          <a href="#" class="mt-6 p-2 px-8 text-white font-medium bg-normalPurple rounded-md hover:bg-darkWhite">
-              Let's talk
+          <a href="#" class="mt-6 p-2 px-8 text-white font-medium bg-normalPurple rounded-md hover:bg-darkWhite" onclick="openForm()">
+            Let's talk
           </a>
         </div>
+
+        <!-- Form -->
+        <form id="myForm" class="form w-full h-full bg-gray-200 p-8">
+          <div class="flex items-center justify-between">
+            <p></p>
+            <a href="javascript:void(0)" class="closebtn text-gray-600" onclick="closeForm()">&times;</a>
+          </div>
+          <p class="text-gray-600 text-lg font-normal mt-6">Please don't hesitate to reach out to me</p>
+
+          <!-- Name input -->
+          <div class="mt-4">
+            <label class="text-md font-normal text-gray-600 mt-6">Name</label>
+            <input type="text" class="mt-1 w-full p-2 border-b-2 border-gray-500 text-gray-500">
+          </div>
+
+          <!-- Email input -->
+          <div class="mt-4">
+            <label class="text-md font-normal text-gray-600 mt-6">Email</label>
+            <input type="email" class="mt-1 w-full p-2 border-b-2 border-gray-500 text-gray-500">
+          </div>
+
+          <!-- Subject input -->
+          <div class="mt-4">
+            <label class="text-md font-normal text-gray-600 mt-6">Subject</label>
+            <input type="text" class="mt-1 w-full p-2 border-b-2 border-gray-500 text-gray-500">
+          </div>
+          
+          <!-- Message input -->
+          <div class="mt-4">
+            <label class="text-md font-normal text-gray-600 mt-6">Message</label>
+            <div class="mt-1">
+              <textarea rows="3" class="mt-1 w-full p-2 border-b-2 border-gray-500 text-gray-500" placeholder=""></textarea>
+            </div>
+          </div>
+
+          <!-- Send message button -->
+          <div class="flex flex-col items-center">
+            <a href="#" class="mt-6 p-2 px-8 text-white font-medium bg-purple-500 rounded-md hover:bg-darkWhite">
+              Send message
+            </a>
+          </div>
+          
+        </form>
 
         <div class="container md:hidden flex justify-between mt-12">
           <img src="drawing1.png" class="w-32 mt-8" alt="">
@@ -206,7 +317,7 @@
           <div class="flex flex-col items-center p-6 space-y-6 md:w-1/2 bg-darkWhite rounded-br-xl rounded-bl-xl md:rounded-br-none md:rounded-l-xl">
             <h3 class="text-lg font-semibold text-center">Nakisa AI Digital Doctor</h3>
             <h3 class="text-sm text-normaGray">Web and Mobile Application</h3>
-            <a href="#" class="font-medium mt-36 p-2 px-8 text-white bg-normalPurple rounded-md hover:bg-lightPurple">
+            <a class="font-medium mt-36 p-2 px-8 text-white bg-normalPurple rounded-md hover:bg-lightPurple" onclick="openProject()">
               View Project
             </a>
           </div>
@@ -225,7 +336,7 @@
           <div class="flex flex-col items-center p-6 space-y-6 md:w-1/2 bg-darkWhite rounded-tr-lg rounded-tl-lg md:rounded-tl-none md:rounded-r-xl ">
             <h3 class="text-lg font-semibold text-center">Gender and age Detection System</h3>
             <h3 class="text-sm text-normaGray">Mobile Application</h3>
-            <a href="#" class="font-medium mt-36 p-2 px-8 text-white bg-normalPurple rounded-md hover:bg-lightPurple">
+            <a class="font-medium mt-36 p-2 px-8 text-white bg-normalPurple rounded-md hover:bg-lightPurple" onclick="openProject()">
                 View Project
             </a>
           </div>
@@ -236,7 +347,7 @@
           <div class="flex flex-col items-center p-6 space-y-6 md:w-1/2 bg-darkWhite rounded-br-xl rounded-bl-xl md:rounded-br-none md:rounded-l-xl">
             <h3 class="text-lg font-semibold text-center">Hona</h3>
             <h3 class="text-sm text-normaGray">Mobile Application</h3>
-            <a href="#" class="font-medium mt-36 p-2 px-8 text-white bg-normalPurple rounded-md hover:bg-lightPurple">
+            <a class="font-medium mt-36 p-2 px-8 text-white bg-normalPurple rounded-md hover:bg-lightPurple" onclick="openProject()">
                 View Project
             </a>
           </div>
@@ -245,6 +356,37 @@
             <img src="project_three.png" class="h-64 my-auto" alt="">
           </div>
         </div>
+
+        <!-- View Project -->
+        <div id="myProject" class="project w-full h-full bg-gray-200 p-8">
+          <div class="h-full flex items-center">
+            <div class="h-full">
+            </div>
+            <div class="w-full">
+              <div class="flex flex-col items-center">
+                <!-- Here -->
+                <div class="flex flex-col-reverse mx-6 md:flex-row md:space-x-0">
+                  <div class="flex flex-col items-center p-6 space-y-6 md:w-1/2 bg-darkWhite rounded-br-xl rounded-bl-xl md:rounded-br-none md:rounded-l-xl">
+                    <h3 class="text-sm text-gray-500">Project descript</h3>
+                  </div>
+                  <div class="flex flex-col items-center space-y-6 md:w-1/2 bg-normalPurple rounded-tr-lg rounded-tl-lg md:rounded-tl-none md:rounded-r-xl ">
+                    <img src="project_three.png" class="h-64 my-auto" alt="">
+                  </div>
+                </div>
+              </div>
+              <!-- Send message button -->
+              <div class="flex flex-col items-center">
+                <a class="mt-6 p-2 px-8 text-white font-medium bg-purple-500 rounded-md hover:bg-darkWhite" onclick="closeProject()">
+                  Close
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+        </div>
+
       </section>
 
       <!-- Contact me -->
@@ -259,6 +401,39 @@
         </div>
       </section>
 
+
+      <script>
+        //open hamuburger menu
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        //close hamuburger menu
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+
+        //open form
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+
+        //close form
+        function closeForm(){
+          document.getElementById("myForm").style.display = "none";
+        }
+
+        //open project
+        function openProject() {
+          document.getElementById("myProject").style.display = "block";
+        }
+
+        //close project
+        function closeProject(){
+          document.getElementById("myProject").style.display = "none";
+        }
+
+      </script>
 
     </div>
     
